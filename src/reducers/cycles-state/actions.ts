@@ -1,5 +1,10 @@
 import { Cycle } from "./reducer"
 
+export type CyclesStateAction = {
+  type: CyclesStateActionTypes;
+  payload: any;
+}
+
 export enum CyclesStateActionTypes {
   ADD_NEW_CYCLE = "ADD_NEW_CYCLE",
   MARK_CURRENT_CYCLE_AS_FINISHED = "MARK_CURRENT_CYCLE_AS_FINISHED",
