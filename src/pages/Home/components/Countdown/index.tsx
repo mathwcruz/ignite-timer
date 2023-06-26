@@ -34,9 +34,9 @@ export function Countdown() {
   ).padStart(2, "0");
 
   useEffect(() => {
-    if (activeCycle) {
-      document.title = `Ignite Timer | ${currentCycleMinutesFormatted}:${currentCycleSecondsFormatted}`;
-    }
+    document.title = activeCycle
+      ? `Ignite Timer | ${currentCycleMinutesFormatted}:${currentCycleSecondsFormatted}`
+      : `Ignite Timer`;
   }, [activeCycle, currentCycleMinutesFormatted, currentCycleSecondsFormatted]);
 
   useEffect(() => {

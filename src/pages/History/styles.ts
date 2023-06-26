@@ -5,7 +5,7 @@ export const HistoryContainer = styled.main`
   padding: 3.5rem;
   display: flex;
   flex-direction: column;
-  
+
   h1 {
     font-size: 1.5rem;
     color: ${(props) => props.theme["gray-100"]};
@@ -60,6 +60,27 @@ export const HistoryList = styled.div`
   }
 `;
 
+export const NoCyclesDataContainer = styled.div`
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+
+  img {
+    width: 125px;
+  }
+
+  span {
+    font-size: 0.875rem;
+    text-align: center;
+    max-width: 18.75rem;
+    color: ${(props) => props.theme["gray-300"]};
+  }
+`;
+
 const STATUS_COLORS = {
   yellow: "yellow-500",
   red: "red-500",
@@ -81,5 +102,27 @@ export const StatusBadge = styled.span<StatusBadgeProps>`
     height: 0.5rem;
     border-radius: 50%;
     background: ${(props) => props.theme[STATUS_COLORS[props.statuscolor]]};
+  }
+`;
+
+export const RemoveCycleFromHistoryButton = styled.button`
+  width: 100%;
+  border: 0;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  color: ${(props) => props.theme["red-500"]};
+  transition: all 0.2s ease-in-out;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  &:hover:not(:disabled) {
+    opacity: 0.8;
   }
 `;
